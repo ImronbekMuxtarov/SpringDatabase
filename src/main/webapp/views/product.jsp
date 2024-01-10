@@ -10,17 +10,24 @@
 <html>
 <head>
     <title>Product</title>
+    <link href="<%= request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container mt-4">
         <h1>Product Details</h1>
         <div class="card mt-3">
             <div class="card-body">
+                <h2 class="card-title">Id: <%= product.getId()%></h2>
                 <h2 class="card-title">Name: <%= product.getName()%></h2>
-                <h2 class="card-text">Price: $<%= product.getId()%></h2>
+                <h2 class="card-text">Price: $<%= product.getPrice()%></h2>
             </div>
         </div>
-        <a href="${pageContext.request.contextPath}/products" class="btn btn-secondary mt-3">Back to Products</a>
+        <a href="<%= request.getContextPath()%>/delete/<%= product.getId()%>" class="btn btn-danger">Delete</a>
+        <a href="<%= request.getContextPath()%>/updateproduct/<%= product.getId()%>" class="btn btn-warning">Update</a>
+        <a href="${pageContext.request.contextPath}/products" class="btn btn-dark">Back to Products</a>
     </div>
+    <script src="<%= request.getContextPath()%>/js"></script>
+
 </body>
 </html>
